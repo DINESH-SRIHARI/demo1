@@ -1,13 +1,12 @@
-const express=require('express')
-const app=express()
-app.use(express.static('public'))
+const express = require('express');
+const app = express();
 
-app.get('/',async(req,res)=>{
-    console.log("triggered this api");
-    
-    res.render({message:"hello"})
-})
+// Route to send a success message
+app.get('/', (req, res) => {
+  res.send('Success! Your application is running.');
+});
 
-app.listen(5001,()=>{
-    console.log('hello')
-})
+// Start server
+app.listen(5001, () => {
+  console.log('Server running on port 5001');
+});
